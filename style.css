@@ -17,6 +17,11 @@ body {
   background: #333;
 }
 
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
 
 /* Style the top navigation bar */
 .navbar {
@@ -107,7 +112,11 @@ body {
   padding: 14px 20px;
   	
 }
-
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row-1, .navbar {   
+    flex-direction: column;
+  }
 }
 
 /* PAGE ABOUT */
@@ -206,6 +215,7 @@ h2{
   flex: 33%;
   max-width: 33%;
   padding: 0 4px;
+  margin-bottom: 
 }
 
 .column img {
@@ -214,11 +224,14 @@ h2{
   width: 100%;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row-1, .navbar {   
-    flex-direction: column;
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
   }
+}
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -239,7 +252,7 @@ html {
     float: none;
     display: block;
     width: 100%;
-    text-align: center; 
+    text-align: center; /* If you want the text to be left-aligned on small screens */
   }
 }
 
@@ -248,7 +261,7 @@ html {
   
   background-color: transparent;
   height: 500px;
-  border: 3px solid white;
+  border: 5px solid white;
   margin-top: 25px;
   padding: 20px;
 
